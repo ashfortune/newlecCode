@@ -7,6 +7,7 @@ import java.io.InputStream;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.ApplicationContext;
 
 import com.newlecture.web.entity.Exam;
 import com.newlecture.web.service.ExamService;
@@ -19,7 +20,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.Part;
 
-@WebServlet("/exam/list")
+//@WebServlet("/exam/list")
 @MultipartConfig(
 		fileSizeThreshold = 0,
 		maxFileSize = 500*1024*1024,
@@ -31,6 +32,7 @@ import jakarta.servlet.http.Part;
 		
 		@Autowired
 		private ExamService service;
+		ApplicationContext context;
 		
 		public ListController() {
 //			Repository<Exam> repository = new JDBCExamRepository();
